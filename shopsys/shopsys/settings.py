@@ -75,8 +75,16 @@ WSGI_APPLICATION = 'shopsys.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'shopsys',			#數據庫名
+		'USER': 'shopsys',			#數據庫賬戶名
+		'PASSWORD': '12345678',		#數據庫密碼,爲安全起見,應從系統環境變量讀取
+									#例如os.environ['SHOPSYS_DB_PASS']
+		'HOST': '127.0.0.1',		#數據庫服務器IP
+		'PORT': '3306'				#數據庫服務端口
+		
+		
+        
     }
 }
 
